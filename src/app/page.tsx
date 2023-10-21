@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { CardType } from "@/types";
 import { buttonVariants } from "@/components/ui/button";
 
-export async function getData() {
+async function getData() {
   const res = await fetch("https://demo8881327.mockable.io/promarketing");
 
   if (!res.ok) {
