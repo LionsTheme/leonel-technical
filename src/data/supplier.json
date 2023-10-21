@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "supplier": "evoplay",
+    "logo": {
+      "lg": "/images/Size=title, brand=evoplay.png",
+      "md": "/images/Size=card, brand=evoplay.png",
+      "sm": "/images/Size=Default.png"
+    }
+  },
+  {
+    "id": 2,
+    "supplier": "playtech",
+    "logo": {
+      "lg": "/images/Size=title, brand=play tech.png",
+      "md": "/images/Size=card, brand=play tech.png",
+      "sm": "/images/Size=Default.png"
+    }
+  },
+  {
+    "id": 3,
+    "supplier": "pragmatic",
+    "logo": {
+      "lg": "/images/Size=title, brand=pragmatic.png",
+      "md": "/images/Size=card, brand=Pragmatic.png",
+      "sm": "/images/Size=Default.png"
+    }
+  },
+  {
+    "id": 4,
+    "supplier": "spinomenal",
+    "logo": {
+      "lg": "/images/Size=title, brand=spinomenal.png",
+      "md": "/images/Size=card, brand=spinomenal.png",
+      "sm": "/images/Size=spplier.png"
+    }
+  }
+]

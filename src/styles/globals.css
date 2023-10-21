@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============================================
+=            Variables            =
+=============================================*/
+
+@layer base {
+  :root {
+    /* Variables */
+    --primary: 225 80% 17%;
+    --primary-focus: 225 37% 37%;
+    --primary-content: 224 32% 91%;
+
+    --background: 0 0% 100%;
+    --content: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-content: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-content: 222.2 84% 4.9%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-content: 222.2 47.4% 11.2%;
+
+    --muted: 0, 0%, 91%;
+    --muted-content: 0 0% 56%;
+
+    --neutral: 0, 0%, 91%;
+    --neutral-content: 0 0% 56%;
+
+    --accent: 43 96% 56%;
+    --accent-focus: 46 100% 55%;
+    --accent-content: 48 56% 93%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-content: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --info-bg: 43 96% 56%;
+
+    --radius: 0.75rem; /* 12px */
+  }
+}
+/*=====  End of Variables  ======*/
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-content font-sans;
+  }
+}
+
+/*=============================================
+=            Components Styles            =
+=============================================*/
+
+@layer components {
+  /*----------  Buttons Styles  ----------*/
+  .btn {
+    @apply inline-flex items-center justify-center uppercase [font-variant:all-small-caps] font-bold ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:bg-neutral disabled:text-neutral-content disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-content hover:bg-primary-focus active:border active:border-primary active:bg-primary-focus;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-content hover:bg-accent-focus active:border active:border-accent active:bg-accent-focus;
+  }
+
+  .btn-icon {
+    @apply gap-[0.625rem];
+
+    svg {
+      @apply h-5 w-5;
+    }
+  }
+
+  .btn-outline {
+    &:not([disabled]) {
+      @apply bg-transparent border-2 border-primary text-primary hover:bg-primary-content active:bg-primary-focus active:text-primary-content;
+    }
+
+    &.btn-accent:not([disabled]) {
+      @apply bg-transparent border-2 border-accent text-accent hover:bg-accent-content active:bg-accent-focus active:text-accent-content;
+    }
+
+    &:disabled {
+      @apply bg-transparent border-2 border-muted-content text-muted-content;
+    }
+  }
+
+  /*----------  Cards Styles  ----------*/
+
+  .card {
+    &:not(.card-disabled) {
+      .backdrop,
+      .card-info,
+      .card-action-btn {
+        @apply transition-opacity duration-300 ease-in-out opacity-0;
+      }
+
+      .backdrop {
+        @apply absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent z-0;
+      }
+
+      &:hover {
+        .backdrop,
+        .card-info {
+          @apply opacity-100;
+        }
+
+        .card-action-btn {
+          @apply opacity-100;
+        }
+
+        .card-bonus-icon {
+          @apply bg-[#fbbf24]/20;
+        }
+      }
+
+      &:active {
+        .backdrop {
+          @apply opacity-100;
+        }
+      }
+
+      .toggle {
+        @apply inline-flex items-center justify-center ring-offset-background transition-colors duration-200 hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-black/20 text-white data-[state=off]:bg-black/80;
+      }
+    }
+
+    &.card-disabled {
+      @apply pointer-events-none;
+
+      .backdrop {
+        @apply absolute top-0 left-0 w-full h-full bg-black/60 z-0;
+      }
+
+      .toggle,
+      .card-info,
+      .card-btn-info,
+      .card-bonus-icon {
+        @apply hidden;
+      }
+    }
+  }
+}
+
+/*=====  End of Components Styles  ======*/
